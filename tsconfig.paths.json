@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/assets": [
+        "./src/assets/*"
+      ],
+      "@/components": [
+        "./src/components/*"
+      ],
+      "@/containers": [
+        "./src/containers/*"
+      ],
+      "@/core": [
+        "./src/core/*"
+      ],
+      "@/pages": [
+        "./src/pages/*"
+      ],
+      "@/styles": [
+        "./src/styles/*"
+      ]
+    }
+  }
+}

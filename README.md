@@ -1,46 +1,69 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in the development mode.
 
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## `PROJECT STRUCTURE`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+~ `Components:`
 
-### `yarn eject`
+1) `Smart` - Smart components are those components that can use relatively serious logic to display something.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  * Can use local storage as well as access global storage without changing it
+  * Can use all available hooks except those that interact with the network
+  * Can use Ordinary, Simple and UI components in their implementation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2) `Ordinary` - Ordinary components are those components that can have some kind of logic to display something
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Can't use local storage, nor access global
+* Cannot use hooks other than those natively shipped with React (with the exception of useState)
+* Can use Simple and UI components in their implementation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4) `Simple` - Simple components are those components that are simple, in other words, components that do not have any logic in them, that just render something.
+* Cannot use local storage and access global
+* Cannot use hooks other than those natively shipped with React (with the exception of useState)
+* Can use UI components in their implementation
 
-## Learn More
+5) `UI (UI, oddly enough)` - UI components are those components that replace native (standard) components by type: button, input, textarea, select, etc.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Cannot use their local storage and access the global
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+~  `Containers`- these are the components that form some containers, which, in the future, are used to form pages, which, moreover, contain in their implementation the components of the other four groups and at the same time interact in some way with services or the network, speaking generally
+
+---
+
+~ `Pages` are those components that are formed thanks to containers and components from the Components folder, if necessary. They can, like containers, interact with services.
+
+---
+
+~ `Core`. This folder is the "core" of your application. It stores everything to interact with the server, global storage, the theme of your application, etc
+
+This folder contains:
+* Config - this folder stores the configuration files of the application (for example, it can store data needed to interact with the backend)
+* Constants - this folder contains all the constants that are used in the application (for example, error and warning messages)
+* Hooks - this folder stores all custom hooks (hooks that were made by you).
+* Models - this folder stores models that come from the backend.
+* Schemes - this folder stores the schemes of forms, tables, etc.
+* Services - this folder stores the services themselves, thanks to which communication with the backend takes place.
+* Store - global storage schemes are stored in this folder (if you use MobX), if you prefer Redux, then actions, reducers, etc. can be stored in this folder.
+* Theme (for Styled-Components) - This folder stores application themes.
+* Types - this folder stores auxiliary types, as well as module declarations.
+* Utils - this folder contains auxiliary, simple, functions that can be used in hooks or components.
+* api.ts - this file contains an instance of an HTTP client (for example, axios), which is used by services and which somehow mutates these requests (to transfer any headers, for example).
+---
+
+~ `Assets` - this folder stores all static files, such as: icons, images, fonts, etc. (they, of course, should also be grouped and divided into folders)
+
+---
+
+~ `Routes` - in this folder (or a file, as you like) all application routes are stored (an example will be below)
+
+---
+
+~ `Styles` - this folder stores all global styles that apply to all elements and the document, including
+
+
